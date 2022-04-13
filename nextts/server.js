@@ -3,11 +3,10 @@ const { createServer } = require("http");
 const { parse } = require("url");
 const next = require("next");
 const dev = process.env.NODE_ENV !== "production";
-// const port = process.env.PORT;
+const port = process.env.PORT;
 
 // when using middleware `hostname` and `port` must be provided below
 const hostname = "localhost";
-const port = 3001;
 const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();
 
