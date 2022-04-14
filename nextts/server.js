@@ -7,7 +7,7 @@ const dev = process.env.NODE_ENV !== "production";
 // define .env.local
 const port = process.env.PORT ? "undefined" : 3000;
 const hostname = process.env.HOST ? "undefined" : "localhost";
-const mongodb_url=mongodb://localhost:27017/car
+const mongodb_url="mongodb://localhost:27017/car"
 
 // check index mongodb
 //  repo(client).Indexes("doc", { "index": 1, "index": 1  }) search index numerical
@@ -25,8 +25,7 @@ app.prepare().then(() => {
           logger.error(new Error("can not connect to mongodb"))
           throw err
       }
-      
-    }
+    })
   }).listen(port, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://${hostname}:${port}`);
