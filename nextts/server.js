@@ -6,12 +6,12 @@ const { port, hostname, dev, mongodb_url } = require("./next.config");
 // check index mongodb
 //  repo(client).Indexes("doc", { "index": 1, "index": 1  }) search index numerical
 
-const app = next({ dev, hostname, port });
+
+const app = next({  dev : dev!== 'production', hostname, port });
 const handle = app.getRequestHandler();
 const middleware = require("./middleware/index");
 
 app.prepare().then(() => {
-
   const MongoClient = require("mongodb").MongoClient;
   const client_mongo = new MongoClient(mongodb_url, {
     useUnifiedTopology: true,
