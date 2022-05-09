@@ -1,7 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import "antd/dist/antd.css";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
@@ -13,7 +10,7 @@ import {
   GooglePlusOutlined,
 } from "@ant-design/icons";
 
-const Home: NextPage = () => {
+const Login: NextPage = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({});
 
@@ -109,4 +106,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Login;

@@ -22,6 +22,7 @@ app.prepare().then(() => {
 
   server.get("/index", middleware.restrictAccess);
   server.get("/register", middleware.restrictAccess);
+  server.get("/home", middleware.restrictAccess);
 
   server.get("*", (req, res) => {
     return handle(req, res);
