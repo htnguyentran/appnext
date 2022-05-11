@@ -1,13 +1,18 @@
 html,
 .logo {
-    height: 32px;
-    margin: 16px;
-    background: rgba(255, 255, 255, 0.3);
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .site-layout .site-layout-background {
-    background: #fff;
+  background: #fff;
 }
 [data-theme="dark"] .site-layout .site-layout-background {
-    background: #141414;
-  }
+  background: #141414;
+}
+
+.site-statistic-demo-card {
+  padding: 30px;
+  background: #ececec;
+}

@@ -1,7 +1,8 @@
 import "antd/dist/antd.css";
-import "antd/dist/antd.css";
 import MyBreadcrumb from "../components/navigation/MyBreadcrumb";
-import { Layout, Menu, Breadcrumb, MenuProps } from "antd";
+import MyStatistic from "../components/dataDisplay/MyStatistic";
+import * as api from "./api/index";
+import { Layout, Menu, Breadcrumb, MenuProps, Empty } from "antd";
 import {
   DesktopOutlined,
   PieChartOutlined,
@@ -81,7 +82,9 @@ const Index = () => {
           <div
             className="site-layout-background"
             style={{ padding: 24, minHeight: 360 }}
-          ></div>
+          >
+            <MyStatistic></MyStatistic>
+          </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
           Gara Tson ©2022 Created by Ant Thongnt

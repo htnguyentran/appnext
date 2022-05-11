@@ -31,7 +31,6 @@ app.prepare().then(() => {
 
   server.post("/api/insert", handler.Insert(client_mongo));
   server.get("/api/search", handler.Search(client_mongo));
-  // server.post("/api/search", handle.search(client_mongo));
 
   server.get("*", (req, res) => {
     return handle(req, res);

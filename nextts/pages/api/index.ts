@@ -1,19 +1,6 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next";
-
-// type Data = {
-//   name: string
-// }
-
-// export default function handler(
-//   req: NextApiRequest,
-//   res: NextApiResponse<Data>
-// ) {
-//   res.status(200).json({ name: 'John Doe' })
-// }
 import fetch from "isomorphic-unfetch";
 
-let baseURl = process.env.CURRENT_DOMAIN;
+let baseURl = process.env.HOST;
 let port = process.env.PORT;
 let headers = {
   "Content-Type": "application/json",
@@ -23,14 +10,14 @@ let headers = {
 const Search = async (params: Object, req: Object, signal = null) => {
   if (req) {
     headers["cookie"] = req.headers.cookie;
-    baseURl = "http://localhost:" + process.env.PORT;
+    baseURl = "http://localhost:" + port;
   }
-  const res = await fetch(`${baseURl}/api/search`, {
+  const res = await fetch(`/api/search`, {
     method: "GET",
     credentials: "include",
     headers,
     signal,
   });
-  return await res.status(200).json();
+  return await res.json();
 };
 export { Search };
