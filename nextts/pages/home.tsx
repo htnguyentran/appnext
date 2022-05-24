@@ -52,7 +52,9 @@ const Index = () => {
   };
   const loadTable = async () => {
     try {
-      const result = await api.Search();
+      const param = {name : 'thong'};
+      const result = await api.Search(param);
+      
     } catch (error) {
       throw error;
     }

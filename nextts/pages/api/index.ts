@@ -2,14 +2,14 @@ import fetch from "isomorphic-unfetch";
 
 let baseURl = process.env.HOST;
 let port = process.env.PORT;
+
 let headers = {
   "Content-Type": "application/json",
   "X-Requested-With": "XMLHttpRequest",
 };
 
-const Search = async (params: Object, req: Object, signal = null) => {
+const Search = async (model: any, req = null, signal = null) => {
   if (req) {
-    headers["cookie"] = req.headers.cookie;
     baseURl = "http://localhost:" + port;
   }
   const res = await fetch(`/api/search`, {
@@ -18,6 +18,8 @@ const Search = async (params: Object, req: Object, signal = null) => {
     headers,
     signal,
   });
-  return await res.json();
+  let data = await res.json();
+  return data;
 };
+
 export { Search };
