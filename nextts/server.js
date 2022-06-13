@@ -29,6 +29,7 @@ app.prepare().then(() => {
   server.get("/register", middleware.restrictAccess);
   server.get("/home", middleware.restrictAccess);
 
+  server.get("/product", middleware.restrictAccess);
   server.post("/api/insert", handler.Insert(client_mongo));
   server.get("/api/search", handler.Search(client_mongo));
 
